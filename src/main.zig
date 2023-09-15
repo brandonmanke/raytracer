@@ -1,6 +1,6 @@
 const std = @import("std");
 
-const float_cmp = @import("util.zig").float_cmp;
+const util = @import("util.zig");
 
 pub fn main() !void {
     // Prints to stderr (it's a shortcut based on `std.io.getStdErr()`)
@@ -18,7 +18,7 @@ pub fn main() !void {
     try bw.flush(); // don't forget to flush!
 
     //const is_equal = float_cmp(1.1231231, 1.123);
-    const is_equal = float_cmp(1.0, 1.0);
+    const is_equal = util.floatCmp(f64, 1.0, 1.0);
 
     std.debug.print("1.0 == 1.0 ? {d}\n", .{@intFromBool(is_equal)});
 }

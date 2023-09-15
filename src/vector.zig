@@ -102,19 +102,19 @@ const Vector = struct {
     }
 };
 
-test "point.init" {
+test "Point.init" {
     const p = Point.init(4.3, -4.2, 3.1);
 
     try std.testing.expectEqual(p, Point.init(4.3, -4.2, 3.1));
 }
 
-test "vector.init" {
+test "Vector.init" {
     const v = Vector.init(4.3, -4.2, 3.1);
 
     try std.testing.expectEqual(v, Vector.init(4.3, -4.2, 3.1));
 }
 
-test "vector.add" {
+test "Vector.add" {
     const v1 = Vector.init(3.0, -2.0, 5.0);
     const v2 = Vector.init(-2.0, 3.0, 1.0);
 
@@ -124,7 +124,7 @@ test "vector.add" {
     try std.testing.expectEqual(result, expected);
 }
 
-test "vector.diff" {
+test "Vector.diff" {
     const v1 = Vector.init(3.0, 2.0, 1.0);
     const v2 = Vector.init(5.0, 6.0, 7.0);
 
@@ -134,7 +134,7 @@ test "vector.diff" {
     try std.testing.expectEqual(result, expected);
 }
 
-test "vector.negate" {
+test "Vector.negate" {
     const v = Vector.init(1.0, -2.0, 3.0);
 
     const expected = Vector.init(-1.0, 2.0, -3.0);
@@ -143,7 +143,7 @@ test "vector.negate" {
     try std.testing.expectEqual(result, expected);
 }
 
-test "vector.scale" {
+test "Vector.scale" {
     const v = Vector.init(1.0, -2.0, 3.0);
 
     const expected = Vector.init(3.5, -7.0, 10.5);
@@ -152,7 +152,7 @@ test "vector.scale" {
     try std.testing.expectEqual(result, expected);
 }
 
-test "vector.magnitude" {
+test "Vector.magnitude" {
     var v = Vector.init(1.0, 0.0, 0.0);
     try std.testing.expect(v.magnitude() == 1.0);
 
@@ -170,7 +170,7 @@ test "vector.magnitude" {
 }
 
 // could break up into multiple tests
-test "vector.normalize" {
+test "Vector.normalize" {
     var v = Vector.init(4.0, 0.0, 0.0);
     var expected = Vector.init(1.0, 0.0, 0.0);
     var result = v.normalize();
@@ -189,14 +189,14 @@ test "vector.normalize" {
     try std.testing.expect(result.magnitude() == 1.0);
 }
 
-test "vector.dot" {
+test "Vector.dot" {
     const v1 = Vector.init(1.0, 2.0, 3.0);
     const v2 = Vector.init(2.0, 3.0, 4.0);
 
     try std.testing.expect(v1.dot(v2) == 20.0);
 }
 
-test "vector.cross" {
+test "Vector.cross" {
     const v1 = Vector.init(1.0, 2.0, 3.0);
     const v2 = Vector.init(2.0, 3.0, 4.0);
 
