@@ -1,12 +1,12 @@
 const std = @import("std");
 const math = std.math;
 
-const TupleType = enum(u8) {
+pub const TupleType = enum(u8) {
     vector,
     point,
 };
 
-const Point = struct {
+pub const Point = struct {
     x: f64,
     y: f64,
     z: f64,
@@ -22,7 +22,7 @@ const Point = struct {
     }
 };
 
-const Vector = struct {
+pub const Vector = struct {
     x: f64,
     y: f64,
     z: f64,

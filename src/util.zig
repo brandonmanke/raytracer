@@ -1,6 +1,6 @@
 const std = @import("std");
 
-const EPSILON: f64 = 0.00001;
+const EPSILON = 0.00001;
 
 pub fn floatCmp(comptime T: type, a: f64, b: f64) bool {
     if (@typeInfo(T) != .Float) {
