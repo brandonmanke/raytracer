@@ -2,11 +2,11 @@ const std = @import("std");
 
 const EPSILON = 0.00001;
 
-pub fn floatCmp(comptime T: type, a: f64, b: f64) bool {
+pub fn floatCmp(comptime T: type, a: T, b: T) bool {
     if (@typeInfo(T) != .Float) {
         @compileError("floatCmp not implemented for " ++ @typeName(T) ++ " (only works with floating point numbers)");
     }
-    return @fabs(a - b) < EPSILON;
+    return @abs(a - b) < EPSILON;
 }
 
 test "floatCmp" {

@@ -21,6 +21,24 @@ pub fn Point(comptime T: type) type {
                 ._type = TupleType.point,
             };
         }
+
+        pub fn addVector(self: Point(T), other: Vector(T)) Point(T) {
+            return .{
+                .x = self.x + other.x,
+                .y = self.y + other.y,
+                .z = self.z + other.z,
+                ._type = TupleType.point,
+            };
+        }
+
+        pub fn add(self: Point(T), other: Point(T)) Point(T) {
+            return .{
+                .x = self.x + other.x,
+                .y = self.y + other.y,
+                .z = self.z + other.z,
+                ._type = TupleType.point,
+            };
+        }
     };
 }
 
